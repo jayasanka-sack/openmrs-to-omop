@@ -29,7 +29,7 @@ services:
       - postgres
       - omrsdb
     volumes:
-      - ./symmetricds/engines:/opt/symmetric-ds/engines
+      - ./symmetricds/engines/opt/symmetric-ds/engines
 
 volumes:
   mariadb_data:
