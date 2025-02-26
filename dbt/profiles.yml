@@ -1,0 +1,12 @@
+openmrs_to_omop:
+  outputs:
+    dev:
+      dbname: openmrs
+      host: localhost
+      password: openmrs
+      port: 3306
+      schema: openmrs
+      threads: 1
+      type: mysql
+      user: openmrs
+  target: dev

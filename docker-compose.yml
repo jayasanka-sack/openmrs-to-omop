@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  omrsdb:
+    image: openmrs/openmrs-reference-application-3-db:nightly-with-data
+    ports:
+      - "3306:3306"
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: omop
+      POSTGRES_USER: omop
+      POSTGRES_PASSWORD: omop
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  symmetricds:
+    image: jumpmind/symmetricds
+    container_name: symmetricds
+    restart: always
+    ports:
+      - "31415:31415"
+    depends_on:
+      - postgres
+      - omrsdb
+    volumes:
+      - ./symmetricds/engines:/opt/symmetric-ds/engines
+
+volumes:
+  mariadb_data:
+  postgres_data:
+  symmetricds_data:

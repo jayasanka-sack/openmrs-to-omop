@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: openmrs
+    description: "OpenMRS Source Database"
+    schema: openmrs
+    tables:
+      - name: patient
+      - name: person
+      - name: concept
+        description: "OpenMRS concept table"
+      - name: concept_class
+        description: "OpenMRS concept classification table"
+      - name: concept_datatype
+        description: "OpenMRS concept datatype table"
+#
+#  - name: omop
+#    description: "Target schema for OMOP Common Data Model"
+#    schema: openmrss
+#    tables:
+#      - name: concept
+#        description: "OMOP standard concept table"
+#      - name: concept_class
+#        description: "OMOP concept class mapping"
+#      - name: domain
+#        description: "OMOP domain mapping table"
+#      - name: vocabulary
+#        description: "OMOP vocabulary table"
