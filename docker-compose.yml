@@ -19,19 +19,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  symmetricds:
-    image: jumpmind/symmetricds
-    container_name: symmetricds
-    restart: always
-    ports:
-      - "31415:31415"
-    depends_on:
-      - postgres
-      - omrsdb
-    volumes:
-      - ./symmetricds/engines/opt/symmetric-ds/engines
-
 volumes:
   mariadb_data:
   postgres_data:
-  symmetricds_data:
