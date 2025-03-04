@@ -19,6 +19,31 @@
     form_namespace_and_path: VARCHAR(255)
     encounter_id: INT(11)
   gateway: omrs
+- name: '`openmrs`.`conditions`'
+  columns:
+    condition_id: INT(11)
+    additional_detail: VARCHAR(255)
+    previous_version: INT(11)
+    condition_coded: INT(11)
+    condition_non_coded: VARCHAR(255)
+    condition_coded_name: INT(11)
+    clinical_status: VARCHAR(50)
+    verification_status: VARCHAR(50)
+    onset_date: DATETIME
+    date_created: DATETIME
+    voided: TINYINT(1)
+    date_voided: DATETIME
+    void_reason: VARCHAR(255)
+    uuid: VARCHAR(38)
+    creator: INT(11)
+    voided_by: INT(11)
+    changed_by: INT(11)
+    patient_id: INT(11)
+    end_date: DATETIME
+    date_changed: DATETIME
+    encounter_id: INT(11)
+    form_namespace_and_path: VARCHAR(255)
+  gateway: omrs
 - name: '`openmrs`.`patient`'
   columns:
     patient_id: INT(11)
@@ -53,4 +78,23 @@
     deathdate_estimated: TINYINT(1)
     birthtime: TIME
     cause_of_death_non_coded: VARCHAR(255)
+  gateway: omrs
+- name: '`openmrs`.`visit`'
+  columns:
+    visit_id: INT(11)
+    patient_id: INT(11)
+    visit_type_id: INT(11)
+    date_started: DATETIME
+    date_stopped: DATETIME
+    indication_concept_id: INT(11)
+    location_id: INT(11)
+    creator: INT(11)
+    date_created: DATETIME
+    changed_by: INT(11)
+    date_changed: DATETIME
+    voided: TINYINT(1)
+    voided_by: INT(11)
+    date_voided: DATETIME
+    void_reason: VARCHAR(255)
+    uuid: CHAR(38)
   gateway: omrs

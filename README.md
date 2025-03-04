@@ -1,15 +1,33 @@
-Welcome to your new dbt project!
-
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## Setting up the project
+
+1. Clone the repository
+2. Create a virtual environment:
+    ```sh
+    python3 -m venv venv
+    ```
+
+3. Activate the virtual environment:
+    - On macOS and Linux:
+        ```sh
+        source venv/bin/activate
+        ```
+    - On Windows:
+        ```sh
+        .\venv\Scripts\activate
+        ```
+
+4. Install dependencies:
+    ```sh
+    pip install -r requirements.txt
+    ```
+5. Run the SQL mesh UI:
+    ```sh
+    sqlmesh ui
+    ```
+   navigate to `http://127.0.0.1:8000/` in your browser to view the UI.
+6. Or run the SQL mesh CLI:
+    ```sh
+    sqlmesh plan
+    ```
