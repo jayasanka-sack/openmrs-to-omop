@@ -19,6 +19,59 @@
     form_namespace_and_path: VARCHAR(255)
     encounter_id: INT(11)
   gateway: omrs
+- name: '`openmrs`.`concept`'
+  columns:
+    concept_id: INT(11)
+    retired: TINYINT(1)
+    short_name: VARCHAR(255)
+    description: TEXT
+    form_text: TEXT
+    datatype_id: INT(11)
+    class_id: INT(11)
+    is_set: TINYINT(1)
+    creator: INT(11)
+    date_created: DATETIME
+    version: VARCHAR(50)
+    changed_by: INT(11)
+    date_changed: DATETIME
+    retired_by: INT(11)
+    date_retired: DATETIME
+    retire_reason: VARCHAR(255)
+    uuid: CHAR(38)
+  gateway: omrs
+- name: '`openmrs`.`concept_class`'
+  columns:
+    concept_class_id: INT(11)
+    name: VARCHAR(255)
+    description: VARCHAR(255)
+    creator: INT(11)
+    date_created: DATETIME
+    retired: TINYINT(1)
+    retired_by: INT(11)
+    date_retired: DATETIME
+    retire_reason: VARCHAR(255)
+    uuid: CHAR(38)
+    date_changed: DATETIME
+    changed_by: INT(11)
+  gateway: omrs
+- name: '`openmrs`.`concept_name`'
+  columns:
+    concept_name_id: INT(11)
+    concept_id: INT(11)
+    name: VARCHAR(255)
+    locale: VARCHAR(50)
+    locale_preferred: TINYINT(1)
+    creator: INT(11)
+    date_created: DATETIME
+    concept_name_type: VARCHAR(50)
+    voided: TINYINT(1)
+    voided_by: INT(11)
+    date_voided: DATETIME
+    void_reason: VARCHAR(255)
+    uuid: CHAR(38)
+    date_changed: DATETIME
+    changed_by: INT(11)
+  gateway: omrs
 - name: '`openmrs`.`conditions`'
   columns:
     condition_id: INT(11)
@@ -43,6 +96,78 @@
     date_changed: DATETIME
     encounter_id: INT(11)
     form_namespace_and_path: VARCHAR(255)
+  gateway: omrs
+- name: '`openmrs`.`location`'
+  columns:
+    location_id: INT(11)
+    name: VARCHAR(255)
+    description: VARCHAR(255)
+    address1: VARCHAR(255)
+    address2: VARCHAR(255)
+    city_village: VARCHAR(255)
+    state_province: VARCHAR(255)
+    postal_code: VARCHAR(50)
+    country: VARCHAR(50)
+    latitude: VARCHAR(50)
+    longitude: VARCHAR(50)
+    creator: INT(11)
+    date_created: DATETIME
+    county_district: VARCHAR(255)
+    address3: VARCHAR(255)
+    address4: VARCHAR(255)
+    address5: VARCHAR(255)
+    address6: VARCHAR(255)
+    retired: TINYINT(1)
+    retired_by: INT(11)
+    date_retired: DATETIME
+    retire_reason: VARCHAR(255)
+    parent_location: INT(11)
+    uuid: CHAR(38)
+    changed_by: INT(11)
+    date_changed: DATETIME
+    address7: VARCHAR(255)
+    address8: VARCHAR(255)
+    address9: VARCHAR(255)
+    address10: VARCHAR(255)
+    address11: VARCHAR(255)
+    address12: VARCHAR(255)
+    address13: VARCHAR(255)
+    address14: VARCHAR(255)
+    address15: VARCHAR(255)
+    location_type_concept_id: INT(11)
+  gateway: omrs
+- name: '`openmrs`.`obs`'
+  columns:
+    obs_id: INT(11)
+    person_id: INT(11)
+    concept_id: INT(11)
+    encounter_id: INT(11)
+    order_id: INT(11)
+    obs_datetime: DATETIME
+    location_id: INT(11)
+    obs_group_id: INT(11)
+    accession_number: VARCHAR(255)
+    value_group_id: INT(11)
+    value_coded: INT(11)
+    value_coded_name_id: INT(11)
+    value_drug: INT(11)
+    value_datetime: DATETIME
+    value_numeric: DOUBLE
+    value_modifier: VARCHAR(2)
+    value_text: TEXT
+    value_complex: VARCHAR(1000)
+    comments: VARCHAR(255)
+    creator: INT(11)
+    date_created: DATETIME
+    voided: TINYINT(1)
+    voided_by: INT(11)
+    date_voided: DATETIME
+    void_reason: VARCHAR(255)
+    uuid: CHAR(38)
+    previous_version: INT(11)
+    form_namespace_and_path: VARCHAR(255)
+    status: VARCHAR(16)
+    interpretation: VARCHAR(32)
   gateway: omrs
 - name: '`openmrs`.`patient`'
   columns:
